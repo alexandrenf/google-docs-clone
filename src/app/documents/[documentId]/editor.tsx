@@ -2,7 +2,7 @@
 
 import { useEditorStore } from "@/store/use-editor-store";
 import { useLiveblocksExtension } from "@liveblocks/react-tiptap";
-import { useStorage, useSelf } from "@liveblocks/react/suspense";
+import { useStorage } from "@liveblocks/react/suspense";
 import { EditorContent, useEditor } from "@tiptap/react";
 
 import { FontSizeExtension } from "@/extensions/font-size";
@@ -38,7 +38,6 @@ export function Editor({ initialContent, isReadOnly }: EditorProps) {
     offlineSupport_experimental: true,
   });
   const { setEditor } = useEditorStore();
-  const self = useSelf();
 
   const leftMargin = useStorage((root) => root.leftMargin);
   const rightMargin = useStorage((root) => root.rightMargin);
